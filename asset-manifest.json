@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/knowyourdestination/static/js/main.3c88222f.js",
-    "index.html": "/knowyourdestination/index.html",
-    "main.3c88222f.js.map": "/knowyourdestination/static/js/main.3c88222f.js.map"
+    "main.js": "/wheretogo/static/js/main.3c88222f.js",
+    "index.html": "/wheretogo/index.html",
+    "main.3c88222f.js.map": "/wheretogo/static/js/main.3c88222f.js.map"
   },
   "entrypoints": [
     "static/js/main.3c88222f.js"
