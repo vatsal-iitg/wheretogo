@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GoogleMapReact from "google-map-react";
 import { Paper,Typography,useMediaQuery } from "@material-ui/core";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
@@ -6,7 +6,7 @@ import { Rating } from "@material-ui/lab";
 
 import useStyles from './styles';
 
-const Map = ({places,setCoordinates,setBounds,coordinates,setChildClicked}) => {
+const Map = ({places,setCoordinates,setBounds,coordinates}) => {
 
 
     const classes  = useStyles();    
@@ -18,7 +18,7 @@ const Map = ({places,setCoordinates,setBounds,coordinates,setChildClicked}) => {
     return ( 
 <div className={classes.mapContainer}>
 <GoogleMapReact
-bootstrapURLKeys={{key:'AIzaSyCR0EFuZRcAPFIMt6lCiGbchHDrRXBQah0'}}
+bootstrapURLKeys={{key:process.env.REACT_GOOGLE_MAPS_API_KEY}}
 defaultCenter={coordinates}
 center={coordinates}
 defaultZoom={14}
@@ -30,9 +30,6 @@ onChange={(e)=>{
     setCoordinates({lat:e.center.lat,lng:e.center.lat})
     setBounds({ne:e.marginBounds.ne,sw:e.marginBounds.sw})
 
-}}
-onChildClick={(child)=>{
-setChildClicked(child);
 }}
 >
 {places?.map((place,i)=>(
